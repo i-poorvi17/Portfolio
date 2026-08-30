@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poorvi Agrawal — Cybersecurity Student Portfolio</title>
+<meta name="description" content="Portfolio of Poorvi Agrawal, CS student specializing in cybersecurity, ethical hacking, and digital forensics.">
+
+<!-- Fonts: Space Grotesk (display), IBM Plex Sans (body), IBM Plex Mono (data/labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__brand">PA<span class="dot">.</span></a>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav__links" id="navLinks">
+    <a href="#about">about</a>
+    <a href="#skills">skills</a>
+    <a href="#projects">projects</a>
+    <a href="#path">learning path</a>
+    <a href="#contact" class="nav__cta">contact</a>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<header class="hero" id="top">
+  <canvas id="netCanvas" class="hero__canvas"></canvas>
+  <div class="hero__inner">
+    <p class="eyebrow"><span class="status-dot"></span>STATUS: ONLINE — OPEN TO OPPORTUNITIES</p>
+    <h1 class="hero__name">Poorvi Agrawal</h1>
+    <p class="hero__role">
+      <span id="typedRole">Cybersecurity Enthusiast</span><span class="cursor">_</span>
+    </p>
+    <p class="hero__desc">
+      B.Tech CSE student building hands-on skills across offensive security, networking,
+      and digital forensics — one lab, one CTF, one write-up at a time.
+    </p>
+    <div class="hero__actions">
+      <a href="#projects" class="btn btn--primary">View Projects</a>
+      <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down">
+    <span></span>
+  </a>
+</header>
+
+<main>
+
+<!-- ====== ABOUT ====== -->
+<section class="section" id="about">
+  <div class="section__head">
+    <p class="eyebrow eyebrow--muted">01 / ABOUT</p>
+    <h2>Who I am</h2>
+  </div>
+
+  <div class="about__grid">
+    <div class="about__text">
+      <p>
+        I'm a 5th-semester Computer Science student at BSA College of Engineering &amp; Technology,
+        Mathura, with a growing focus on cybersecurity. My interest sits at the intersection of
+        offensive security — ethical hacking and penetration testing — and the analytical side:
+        digital forensics, cloud security, and AI-powered security tooling.
+      </p>
+      <p>
+        I learn by breaking things in labs, not just reading about them. That means working
+        through TryHackMe rooms, HackTheBox machines, and writing up what I find — alongside
+        core CS coursework and team projects.
+      </p>
+    </div>
+
+    <!-- "system info" readout card -->
+    <div class="info-card" role="table" aria-label="Quick facts">
+      <div class="info-card__title">
+        <span class="info-card__bullet"></span> quick_facts.log
+      </div>
+      <dl class="info-card__list">
+        <div class="info-card__row"><dt>education</dt><dd>B.Tech CSE, BSA COET Mathura</dd></div>
+        <div class="info-card__row"><dt>semester</dt><dd>5th</dd></div>
+        <div class="info-card__row"><dt>focus</dt><dd>Pentesting · Forensics · Cloud Sec</dd></div>
+        <div class="info-card__row"><dt>currently</dt><dd>TryHackMe Cyber Security 101</dd></div>
+        <div class="info-card__row"><dt>os</dt><dd>Kali Linux</dd></div>
+        <div class="info-card__row"><dt>long-term</dt><dd>CERT-In / NCIIPC track</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SKILLS ====== -->
+<section class="section section--alt" id="skills">
+  <div class="section__head">
+    <p class="eyebrow eyebrow--muted">02 / SKILLS</p>
+    <h2>What I work with</h2>
+  </div>
+
+  <div class="skills__grid" id="skillsGrid">
+    <!-- populated by script.js -->
+  </div>
+</section>
+
+<!-- ====== PROJECTS ====== -->
+<section class="section" id="projects">
+  <div class="section__head">
+    <p class="eyebrow eyebrow--muted">03 / PROJECTS</p>
+    <h2>Things I've built</h2>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter-btn is-active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="security">Security</button>
+    <button class="filter-btn" data-filter="dev">Dev &amp; Teams</button>
+  </div>
+
+  <div class="projects__grid" id="projectsGrid">
+    <!-- populated by script.js -->
+  </div>
+</section>
+
+<!-- ====== LEARNING PATH ====== -->
+<section class="section section--alt" id="path">
+  <div class="section__head">
+    <p class="eyebrow eyebrow--muted">04 / LEARNING PATH</p>
+    <h2>Current training route</h2>
+  </div>
+
+  <div class="timeline" id="timeline">
+    <!-- populated by script.js -->
+  </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section class="section" id="contact">
+  <div class="contact">
+    <div class="contact__text">
+      <p class="eyebrow eyebrow--muted">05 / CONTACT</p>
+      <h2>Let's connect</h2>
+      <p>
+        Open to internships, CTF teams, and anyone who wants to talk pentesting,
+        forensics, or Mumbai Indians' next season. Drop a line.
+      </p>
+      <div class="contact__links">
+        <a href="mailto:poorviagrawal1702@gmail.com" class="contact__link">
+          <span class="contact__label">email</span> poorviagrawal1702@gmail.com
+        </a>
+        <a href="https://github.com/i-poorvi17" target="_blank" rel="noopener noreferrer" class="contact__link">
+          <span class="contact__label">github</span> github.com/i-poorvi17
+        </a>
+        <a href="https://www.linkedin.com/in/poorvi-agrawal-a0809732a/" target="_blank" rel="noopener noreferrer" class="contact__link">
+          <span class="contact__label">linkedin</span> linkedin.com/in/Poorvi Agrawal
+        </a>
+      </div>
+    </div>
+
+    <form class="contact__form" id="contactForm">
+      <label for="c-name">Name</label>
+      <input id="c-name" type="text" required placeholder="Your name">
+
+      <label for="c-email">Email</label>
+      <input id="c-email" type="email" required placeholder="you@example.com">
+
+      <label for="c-msg">Message</label>
+      <textarea id="c-msg" rows="4" required placeholder="What's up?"></textarea>
+
+      <button type="submit" class="btn btn--primary">Send Message</button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>Built &amp; maintained by Poorvi Agrawal · <span id="year"></span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
