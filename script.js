@@ -34,15 +34,6 @@ const PROJECTS = [
     linkLabel: "View on GitHub →"
   },
   {
-    title: "AI-Powered Product Intelligence",
-    tag: "Hackathon · Team Lead",
-    category: "dev",
-    description: "Led team 'Elle Codes' at a hackathon to design an AI-driven product intelligence concept for industrial commerce — from idea to a full pitch deck.",
-    stack: ["AI/ML Concepts", "Pitch Deck", "Team Leadership"],
-    link: "#",
-    linkLabel: "View Slides →"
-  },
-  {
     title: "TryHackMe Write-ups",
     tag: "CTF / Labs",
     category: "security",
@@ -92,8 +83,7 @@ const PROJECTS = [
 const TIMELINE = [
   { status: "In Progress", title: "TryHackMe — Cyber Security 101", desc: "Core path covering networking, Linux, and web fundamentals for security.", done: true },
   { status: "In Progress", title: "HackTheBox — Starting Point", desc: "Beginner machines with documented write-ups on GitHub.", done: true },
-  { status: "Ongoing", title: "PortSwigger Web Security Academy", desc: "Structured study of web hacking techniques and OWASP-aligned vulnerabilities.", done: false },
-  { status: "Planned", title: "OSCP Prep", desc: "Targeted after 6th semester, once core offensive fundamentals are solid.", done: false },
+  
 ];
 
 
@@ -297,7 +287,7 @@ function initScrollEffects(){
    or a service like Formspree/EmailJS to actually send mail)
    ========================================================= */
 // Paste your Formspree endpoint here, e.g. "https://formspree.io/f/abcdwxyz"
-const FORMSPREE_ENDPOINT = "PASTE_YOUR_FORMSPREE_URL_HERE";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjygwobj";
 
 function initContactForm(){
   const form = document.getElementById('contactForm');
@@ -306,11 +296,6 @@ function initContactForm(){
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
-    if(FORMSPREE_ENDPOINT.includes('PASTE_YOUR')){
-      note.textContent = "Form not connected yet — add your Formspree URL in script.js.";
-      return;
-    }
 
     btn.disabled = true;
     btn.textContent = "Sending...";
