@@ -5,7 +5,7 @@
    ========================================================= */
 
 const ROLES = [
-  "Cybersecurity analyst"
+  "Cybersecurity Enthusiast"
 ];
 
 const SKILLS = [
@@ -33,7 +33,15 @@ const PROJECTS = [
     link: "https://github.com/i-poorvi17/Python-Scripts",
     linkLabel: "View on GitHub →"
   },
-  
+  {
+    title: "AI-Powered Product Intelligence",
+    tag: "Hackathon · Team Lead",
+    category: "dev",
+    description: "Led team 'Elle Codes' at a hackathon to design an AI-driven product intelligence concept for industrial commerce — from idea to a full pitch deck.",
+    stack: ["AI/ML Concepts", "Pitch Deck", "Team Leadership"],
+    link: "#",
+    linkLabel: "View Slides →"
+  },
   {
     title: "TryHackMe Write-ups",
     tag: "CTF / Labs",
@@ -84,7 +92,8 @@ const PROJECTS = [
 const TIMELINE = [
   { status: "In Progress", title: "TryHackMe — Cyber Security 101", desc: "Core path covering networking, Linux, and web fundamentals for security.", done: true },
   { status: "In Progress", title: "HackTheBox — Starting Point", desc: "Beginner machines with documented write-ups on GitHub.", done: true },
- 
+  { status: "Ongoing", title: "PortSwigger Web Security Academy", desc: "Structured study of web hacking techniques and OWASP-aligned vulnerabilities.", done: false },
+  { status: "Planned", title: "OSCP Prep", desc: "Targeted after 6th semester, once core offensive fundamentals are solid.", done: false },
 ];
 
 
@@ -287,13 +296,49 @@ function initScrollEffects(){
    CONTACT FORM (client-side only — wire up a backend
    or a service like Formspree/EmailJS to actually send mail)
    ========================================================= */
+// Paste your Formspree endpoint here, e.g. "https://formspree.io/f/abcdwxyz"
+const FORMSPREE_ENDPOINT = "PASTE_YOUR_FORMSPREE_URL_HERE";
+
 function initContactForm(){
   const form = document.getElementById('contactForm');
   const note = document.getElementById('formNote');
-  form.addEventListener('submit', (e) => {
+  const btn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    note.textContent = "This form is a UI placeholder — connect it to a service like Formspree or EmailJS to receive messages.";
-    form.reset();
+
+    if(FORMSPREE_ENDPOINT.includes('PASTE_YOUR')){
+      note.textContent = "Form not connected yet — add your Formspree URL in script.js.";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    note.textContent = "";
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: document.getElementById('c-name').value,
+          email: document.getElementById('c-email').value,
+          message: document.getElementById('c-msg').value
+        })
+      });
+
+      if(res.ok){
+        note.textContent = "Message sent! I'll get back to you soon.";
+        form.reset();
+      } else {
+        note.textContent = "Something went wrong. Please try again or email me directly.";
+      }
+    } catch (err) {
+      note.textContent = "Network error. Please try again or email me directly.";
+    }
+
+    btn.disabled = false;
+    btn.textContent = "Send Message";
   });
 }
 
